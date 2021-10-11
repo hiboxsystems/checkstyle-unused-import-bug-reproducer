@@ -1,0 +1,32 @@
+# Add personal workflow specific things to .git/info/exclude
+# Or if you must edit this file keep personal changes private
+# and at the bottom of the file to avoid conflicts.
+
+# The default .gitignore should not ignore things not commonly
+# produced as build or runtime artifacts.
+
+### Common extensions ###
+
+*~
+*.class
+*.pyc
+*.swp
+
+### Common build artifacts ###
+
+/.gradle/
+VERSION
+build/
+/dist/
+/out/
+
+### Common misc stuff ###
+
+.gitconfig
+.classpath
+.project
+.settings
+/.idea/
+*.iml
+
+### Add personal additions to .git/info/exclude or below ###

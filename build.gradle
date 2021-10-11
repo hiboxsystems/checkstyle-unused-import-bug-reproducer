@@ -1,0 +1,12 @@
+apply plugin: 'java'
+apply plugin: 'checkstyle'
+
+repositories {
+    mavenCentral()
+}
+
+checkstyle {
+    toolVersion '9.0.1'
+    configFile file( "${rootProject.rootDir}/gradle/checkstyle/checkstyle.xml" )
+    configDirectory = file( "$rootProject.projectDir/gradle/checkstyle" )
+}
