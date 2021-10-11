@@ -34,3 +34,25 @@ $ ./gradlew checkstyleMain
 BUILD SUCCESSFUL in 803ms
 2 actionable tasks: 1 executed, 1 up-to-date
 ```
+
+## Problem
+
+```java
+package checkstyle.reproducer;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
+public class UnusedImportBug {
+
+    private static final Set<String> FOO;
+    static {
+        FOO = new HashSet<>();
+
+        FOO.add( HashMap[].class.getName() );
+    }
+}
+```
+
+Having the only reference of a class be an array like `HashMap[]` seems to trigger an "unused import" for that class.
